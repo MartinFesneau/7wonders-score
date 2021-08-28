@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game: one
+  player: one
+  board: one
+  win: false
+  war: 1
+  coins: 1
+  wonder: 1
+  yellow: 1
+  green: 1
+  blue: 1
+  violet: 1
+  black: 1
+  leader: 1
+  other: 1
+  total: 1
+
+two:
+  game: two
+  player: two
+  board: two
+  win: false
+  war: 1
+  coins: 1
+  wonder: 1
+  yellow: 1
+  green: 1
+  blue: 1
+  violet: 1
+  black: 1
+  leader: 1
+  other: 1
+  total: 1

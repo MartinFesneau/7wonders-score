@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_28_142259) do
+ActiveRecord::Schema.define(version: 2021_08_28_142627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,4 +33,30 @@ ActiveRecord::Schema.define(version: 2021_08_28_142259) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "scores", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "player_id", null: false
+    t.bigint "board_id", null: false
+    t.boolean "win", default: false, null: false
+    t.integer "war", default: 0, null: false
+    t.integer "coins", default: 0, null: false
+    t.integer "wonder", default: 0, null: false
+    t.integer "yellow", default: 0, null: false
+    t.integer "green", default: 0, null: false
+    t.integer "blue", default: 0, null: false
+    t.integer "violet", default: 0, null: false
+    t.integer "black", default: 0, null: false
+    t.integer "leader", default: 0, null: false
+    t.integer "other", default: 0, null: false
+    t.integer "total", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_scores_on_board_id"
+    t.index ["game_id"], name: "index_scores_on_game_id"
+    t.index ["player_id"], name: "index_scores_on_player_id"
+  end
+
+  add_foreign_key "scores", "boards"
+  add_foreign_key "scores", "games"
+  add_foreign_key "scores", "players"
 end
